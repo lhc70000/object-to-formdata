@@ -53,11 +53,7 @@ function objectToFormData (obj, cfg, fd, pre) {
   } else if (isNull(obj)) {
     fd.append(pre, '')
   } else if (isArray(obj)) {
-    if (!obj.length) {
-      var key = pre + '[]'
-
-      fd.append(key, '')
-    } else {
+    if (obj.length) {
       obj.forEach(function (value, index) {
         var key = pre + '[' + (cfg.indices ? index : '') + ']'
 
